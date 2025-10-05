@@ -5,96 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <style>
-        /* Basic styling for the page to center content */
         body {
             margin: 0;
             padding: 0;
             display: flex;
-            /* Changed to stack header and image */
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Stacks header and main vertically */
             min-height: 100vh;
-            
-            /* --- Background Image Styling --- */
             background-image: url('taramandal.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            
-            overflow: hidden; /* Hides scrollbars */
+            overflow: auto; /* Allow scrolling if content overflows on small screens */
             font-family: sans-serif;
-            
-            /* --- Background Fade-in Animation --- */
             animation: fadeBackground 3s ease-in-out forwards;
         }
 
-        /* --- Styling for the Header --- */
+        /* NEW: Styling for the header section */
+        header {
+            text-align: center;
+            padding: 2rem 1rem; /* Provides vertical and horizontal padding */
+            width: 100%;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        /* UPDATED: Styling for the header text */
         h1 {
             color: #e0e0e0;
-            margin-bottom: 2rem;
+            margin: 0; /* Removed previous margin */
             font-size: 3.5rem;
-            text-align: center;
             animation: fadeInHeader 2.5s ease-in-out;
+            z-index: 2;
+            /* NEW: Added text shadow for readability */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* NEW: Styling for the main content area */
+        main {
+            flex-grow: 1; /* Allows this section to take up all remaining space */
+            display: flex;
+            justify-content: center; /* Horizontally centers the image */
+            align-items: center;    /* Vertically centers the image */
+            padding: 1rem; /* Adds a gap and prevents image from touching edges */
+            box-sizing: border-box;
+        }
+
+        /* UPDATED: Styling for the image */
+        .animated-image {
+            width: 100%; 
+            /* UPDATED: Made larger for better visibility */
+            max-width: 1000px; 
+            height: auto; 
+            animation: fadeInZoom 3s ease-in-out;
             z-index: 2;
         }
 
-        /* --- UPDATED: Styling for the image --- */
-        .animated-image {
-            width: 90%; /* Makes the image responsive within its container */
-            max-width: 700px; /* NEW: Caps the maximum size of the image */
-            height: auto; /* Maintains the aspect ratio */
-            animation: fadeInZoom 3s ease-in-out;
-            z-index: 2; /* Ensures image is on top of background */
-        }
-
-        /* --- Animation for the Header --- */
+        /* Animations remain the same */
         @keyframes fadeInHeader {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* The @keyframes rule defines the animation for the image */
         @keyframes fadeInZoom {
-            from {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
         }
-
-        /* --- Background Image Fade-in Animation --- */
         @keyframes fadeBackground {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        /* --- UPDATED: Responsive adjustments for header size --- */
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             h1 {
-                font-size: 2.8rem; /* Adjusted font size for mobile */
-            }
+                font-size: 2.8rem;
+            }       
         }
     </style>
 </head>
 <body>
 
-    <h1>Contacts</h1>
+    <header>
+        <h1>Contacts</h1>
+    </header>
 
-    <img src="contact.png" class="animated-image" alt="Contact information for Astrolytics, listing team members and email addresses for investment and partnerships.">
+    <main>
+        <img src="contact.png" class="animated-image" alt="Contact information for Astrolytics, listing team members and email addresses for investment and partnerships.">
+    </main>
 
 </body>
 </html>
