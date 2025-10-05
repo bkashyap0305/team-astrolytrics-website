@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Astrolytics | Commercialization of LEO</title>
+  <style>
+    /* (Your existing CSS goes here, no changes needed) */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #ffffff; overflow-x: hidden; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    .slideshow-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+    .slideshow-js img { position: absolute; width: 100%; height: 100%; object-fit: cover; transition: opacity 2.5s ease-in-out; opacity: 1; }
+    header { text-align: center; padding: 2rem; background: rgba(0, 0, 30, 0.6); backdrop-filter: blur(6px); }
+    header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; color: #66ccff; }
+    header h2 { font-size: 1.2rem; font-weight: 300; margin-top: 0.5rem; color: #aaddff; }
+    nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem; background: rgba(0,0,50,0.6); flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #ffffff; font-size: 1rem; position: relative; transition: color 0.3s; padding: 5px; }
+    nav a::after { content: ""; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: #66ccff; transition: 0.3s; }
+    nav a:hover { color: #66ccff; }
+    nav a:hover::after { width: 100%; }
+    main { flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 2rem 0; }
+    .content { padding: 3rem 2rem; max-width: 1000px; text-align: center; background: rgba(0,0,20,0.6); border-radius: 12px; }
+    .content h3 { font-size: 3.5rem; margin-bottom: 1.5rem; color: #66ccff; }
+    .content p { font-size: 1.19rem; line-height: 1.2; color: #ffffff; }
+    .content .vision-list { list-style: none; padding: 0; margin-top: 1rem; }
+    footer { text-align: center; padding: 2rem; background: rgba(0,0,30,0.7); font-size: 1rem; font-weight: bold; letter-spacing: 1px; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      nav { flex-direction: column; gap: 1rem; }
+      .content h3 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-js"></div>
+  <header>
+    <h1>Team Astrolytics</h1>
+    <h2>Commercialization of LEO with Quantum Space Technologies</h2>
+  </header>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="whyleo.html">Why LEO?</a> 
+    <a href="domain_api.html">Domain API</a> <a href="qct_an_overview.html">QCT-An Overview</a>
+    <a href="problems.html">Problems-QC</a>
+    <a href="r&d_program.html">R&D Program</a>
+    <a href="radiationsheilding.html">Radiation Sheilding</a>
+    <a href="oppurtunities.html">Market Oppurtunities</a>
+    <a href="deployment_roadmap.html">Deployment Roadmap</a>
+    <a href="revenue.html">Revenue Streams</a>
+    <a href="fianancials.html">Financial Projections</a>
+    <a href="diminishing.html">Law of Diminishing Returns</a>
+    <a href="simulation.html">Simulation</a>
+    <a href="rules.html">Rules and Regulations</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <div class="content">
+      <h3>THE QUANTUM LEAP TO SPACE</h3>
+      <p><b>OUR MISSION:</b> To pioneer secure, scalable, and efficient quantum computing from Low Earth Orbit, enabling global access to ultra-secure comission driving scientific breakthroughs and supporting mission-critical operations.</p><br>
+      <p><b>OUR VISION:</b></p>
+      <ul class="vision-list">
+        <li>Delivering worthy quantum solutions</li>
+        <li>Business model and revenue streams</li>
+        <li>Key value propositions of QCT</li>
+        <li>Phased growth strategy</li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    © 2025 Team Astrolytics | Inspired by NASA & Quantum Innovations
+  </footer>
+  <script>
+    // Your slideshow JavaScript remains here
+    document.addEventListener("DOMContentLoaded", () => {
+      const images = ["bg1.png", "bg2.png", "bg3.png"];
+      let current = 0;
+      const slideshow = document.querySelector(".slideshow-js");
+      const img = document.createElement("img");
+      img.src = images[current];
+      slideshow.appendChild(img);
+      setInterval(() => {
+        current = (current + 1) % images.length;
+        const nextImg = document.createElement("img");
+        nextImg.src = images[current];
+        nextImg.style.opacity = 0;
+        slideshow.appendChild(nextImg);
+        setTimeout(() => { nextImg.style.opacity = 1; img.style.opacity = 0; }, 50);
+        setTimeout(() => { slideshow.removeChild(img); }, 2500);
+      }, 6000);
+    });
+  </script>
+</body>
+</html>

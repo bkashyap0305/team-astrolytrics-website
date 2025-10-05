@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Team Astrolytics</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    /* Slideshow */
+    .slideshow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 30, 0.6);
+      backdrop-filter: blur(6px);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #66ccff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: rgba(0,0,50,0.6);
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      position: relative;
+    }
+    nav a:hover {
+      color: #66ccff;
+    }
+
+    .content {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      background: rgba(0,0,20,0.6);
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slideshow Background -->
+  <div class="slideshow">
+    <img src="bg1.png" class="active">
+    <img src="bg2.png">
+    <img src="bg3.png">
+  </div>
+
+  <header>
+    <h1>Welcome to Team Astrolytics Home</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Back to Main</a>
+    <a href="#">Explore</a>
+    <a href="#">Updates</a>
+  </nav>
+
+  <div class="content">
+    <h2>About Us</h2>
+    <p>
+      Team Astrolytics is dedicated to revolutionizing Low Earth Orbit (LEO) 
+      with quantum space technologies. This Home page serves as the entry point 
+      to our vision, mission, and technological roadmap.
+    </p>
+    <h2>OUR TEAM </h2>
+     <li>Aaryan Gupta</li>
+    <li>Bhabarnab Kashyap</li>
+    <li>Sneha Sharma</li>
+    <li>John Das Pranta</li>
+    <li>Subham Saini</li>
+
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll(".slideshow img");
+    let current = 0;
+    function changeSlide() {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }
+    setInterval(changeSlide, 6000);
+  </script>
+</body>
+</html>
+

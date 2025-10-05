@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation | Team Astrolytics</title>
+    <style>
+        /* --- Your existing CSS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #ffffff; overflow-x: hidden; }
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        .slideshow-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        .slideshow-js img { position: absolute; width: 100%; height: 100%; object-fit: cover; transition: opacity 2.5s ease-in-out; opacity: 1; }
+        header { text-align: center; padding: 2rem; background: rgba(0, 0, 30, 0.6); backdrop-filter: blur(6px); }
+        header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; color: #66ccff; }
+        header h2 { font-size: 1.2rem; font-weight: 300; margin-top: 0.5rem; color: #aaddff; }
+        nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem; background: rgba(0,0,50,0.6); flex-wrap: wrap; }
+        nav a { text-decoration: none; color: #ffffff; font-size: 1rem; position: relative; transition: color 0.3s; padding: 5px; }
+        nav a::after { content: ""; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: #66ccff; transition: 0.3s; }
+        nav a:hover { color: #66ccff; }
+        nav a:hover::after { width: 100%; }
+        main { flex-grow: 1; padding: 2rem; display: flex; justify-content: center; align-items: center; }
+        .content { padding: 2rem; max-width: 1000px; width: 100%; text-align: center; background: rgba(0,0,20,0.7); border-radius: 12px; }
+        .content h3 { font-size: 2.5rem; margin-bottom: 2rem; color: #66ccff; }
+        footer { text-align: center; padding: 2rem; background: rgba(0,0,30,0.7); font-size: 1rem; font-weight: bold; letter-spacing: 1px; }
+
+        /* --- New CSS for the video player --- */
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            nav { flex-direction: column; gap: 1rem; }
+            .content h3 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-js"></div>
+    <header>
+        <h1>Team Astrolytics</h1>
+        <h2>Orbital Simulation</h2>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="#">WHY LEO?</a>
+        <a href="#">QCT-An Overview</a>
+        <a href="#">Problems</a>
+        <a href="#">R&D Program</a>
+        <a href="#">Radiation Sheilding</a>
+        <a href="#">Market Oppurtunities</a>
+        <a href="#">Deployment Roadmap</a>
+        <a href="#">Revenue Streams</a>
+        <a href="#">Financials</a>
+        <a href="#">Law of Diminishing Returns</a>
+        <a href="simulation.html">Simulation</a>
+        <a href="graphs.html">Graphs of simulation</a>
+        <a href="#">Rules and Regulations</a>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <div class="content">
+            <h3>Satellite Pass Over Ground Stations</h3>
+            <video controls loop>
+                <source src="simulation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </main>
+    <footer>
+        © 2025 Team Astrolytics | Inspired by NASA & Quantum Innovations
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = ["bg1.png", "bg2.png", "bg3.png"];
+            let current = 0;
+            const slideshow = document.querySelector(".slideshow-js");
+            const img = document.createElement("img");
+            img.src = images[current];
+            slideshow.appendChild(img);
+            setInterval(() => {
+                current = (current + 1) % images.length;
+                const nextImg = document.createElement("img");
+                nextImg.src = images[current];
+                nextImg.style.opacity = 0;
+                slideshow.appendChild(nextImg);
+                setTimeout(() => { nextImg.style.opacity = 1; img.style.opacity = 0; }, 50);
+                setTimeout(() => { slideshow.removeChild(img); }, 2500);
+            }, 6000);
+        });
+    </script>
+</body>
+</html>

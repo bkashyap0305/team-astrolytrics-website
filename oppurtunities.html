@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision and Market Opportunity</title>
+    <style>
+        /* Basic styling for the page to center content */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* Changed to stack header and image */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            /* --- NEW: Background Image Styling --- */
+            background-image: url('taramandal.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            
+            overflow: hidden; /* Hides scrollbars */
+            font-family: sans-serif;
+            
+            /* --- NEW: Background Fade-in Animation --- */
+            animation: fadeBackground 3s ease-in-out forwards;
+        }
+
+        /* --- NEW: Styling for the Header --- */
+        h1 {
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+            font-size: 3.5rem;
+            text-align: center;
+            animation: fadeInHeader 2.5s ease-in-out;
+            z-index: 2;
+        }
+
+        /* Styling for the image */
+        .animated-image {
+            max-width: 100%; /* Makes the image responsive */
+            height: auto;
+            animation: fadeInZoom 3s ease-in-out;
+            z-index: 2; /* Ensures image is on top of background */
+        }
+
+        /* --- NEW: Animation for the Header --- */
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* The @keyframes rule defines the animation for the image */
+        @keyframes fadeInZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* --- NEW: Background Image Fade-in Animation --- */
+        @keyframes fadeBackground {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments for header size */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vision And Market Oppurtunities</h1>
+
+    <img src="visionandmarketoppurtunity.png" class="animated-image" alt="A slide showing the company's vision and the market opportunities in Defence, Enterprise, Telecoms, and Academia.">
+
+</body>
+</html>
