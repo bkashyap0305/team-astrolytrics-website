@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why LEO?</title>
+    <style>
+        /* Basic styling for the page to center content */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            /* --- NEW: Background Image Styling --- */
+            background-image: url('taramandal.png'); /* Your background image */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-position: center; /* Centers the background image */
+            background-attachment: fixed; /* Makes background fixed during scroll (if content overflows) */
+            
+            overflow: hidden; /* Hides scrollbars */
+            font-family: sans-serif;
+            
+            /* --- NEW: Background Fade-in Animation --- */
+            animation: fadeBackground 3s ease-in-out forwards; /* Apply animation to body */
+        }
+
+        /* Styling for the Header */
+        h1 {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            font-size: 3.5rem; 
+            animation: fadeInHeader 2.5s ease-in-out;
+            /* Ensure header is on top of content but below background */
+            z-index: 2; 
+        }
+
+        /* Styling for the main image (whyleo.png) */
+        .animated-image {
+            max-width: 100%;
+            height: auto;
+            animation: fadeInZoom 3s ease-in-out;
+            /* Ensure the main image is on top of the background */
+            z-index: 2;
+        }
+
+        /* Animation for the Header */
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for the main image (whyleo.png) */
+        @keyframes fadeInZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* --- NEW: Background Image Fade-in Animation --- */
+        @keyframes fadeBackground {
+            from {
+                opacity: 0; /* Start background fully transparent */
+            }
+            to {
+                opacity: 1; /* End background fully visible */
+            }
+        }
+
+        /* Responsive adjustments for header size */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Why LEO?</h1>
+
+    <img src="whyleo.png" class="animated-image" alt="A slide explaining the advantages of Low Earth Orbit for quantum computing, including superior environment, cooling efficiency, and reduced decoherence.">
+
+</body>
+</html>
