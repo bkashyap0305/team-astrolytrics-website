@@ -16,7 +16,7 @@
             align-items: center;
             min-height: 100vh;
             
-            /* --- NEW: Background Image Styling --- */
+            /* --- Background Image Styling --- */
             background-image: url('taramandal.png');
             background-size: cover;
             background-position: center;
@@ -25,11 +25,11 @@
             overflow: hidden; /* Hides scrollbars */
             font-family: sans-serif;
             
-            /* --- NEW: Background Fade-in Animation --- */
+            /* --- Background Fade-in Animation --- */
             animation: fadeBackground 3s ease-in-out forwards;
         }
 
-        /* --- NEW: Styling for the Header --- */
+        /* --- Styling for the Header --- */
         h1 {
             color: #e0e0e0;
             margin-bottom: 2rem;
@@ -39,15 +39,16 @@
             z-index: 2;
         }
 
-        /* Styling for the image */
+        /* --- UPDATED: Styling for the image --- */
         .animated-image {
-            max-width: 90%; /* Makes the image responsive */
-            height: auto;
+            width: 90%; /* Makes the image responsive within its container */
+            max-width: 700px; /* NEW: Caps the maximum size of the image */
+            height: auto; /* Maintains the aspect ratio */
             animation: fadeInZoom 3s ease-in-out;
             z-index: 2; /* Ensures image is on top of background */
         }
 
-        /* --- NEW: Animation for the Header --- */
+        /* --- Animation for the Header --- */
         @keyframes fadeInHeader {
             from {
                 opacity: 0;
@@ -71,7 +72,7 @@
             }
         }
 
-        /* --- NEW: Background Image Fade-in Animation --- */
+        /* --- Background Image Fade-in Animation --- */
         @keyframes fadeBackground {
             from {
                 opacity: 0;
@@ -81,10 +82,10 @@
             }
         }
 
-        /* Responsive adjustments for header size */
-        @media (max-width: 300px) {
+        /* --- UPDATED: Responsive adjustments for header size --- */
+        @media (max-width: 600px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem; /* Adjusted font size for mobile */
             }
         }
     </style>
@@ -97,4 +98,3 @@
 
 </body>
 </html>
-
